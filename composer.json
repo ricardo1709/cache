@@ -1,0 +1,17 @@
+{
+    "name": "ricardo1709/cache",
+    "authors": [
+        {
+            "name": "Ricardo van Bree",
+            "email": "ricardovbree@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ricardo1709\\Cache\\": "src/"
+        }
+    },
+    "require": { 
+        "psr/cache": "^3.0"
+    }
+}
