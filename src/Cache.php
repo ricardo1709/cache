@@ -36,7 +36,7 @@ class Cache implements CacheItemPoolInterface
      */
     public function getItem(string $key): CacheItemInterface
 	{
-		if ($this->hasItem($key)) {
+		if (!$this->hasItem($key)) {
 			return new CacheItem($key);
 		}
 
@@ -160,7 +160,7 @@ class Cache implements CacheItemPoolInterface
      */
     public function save(CacheItemInterface $item): bool
 	{
-		return file_put_contents($this->directory . '/' . $item->getKey(), serialize($item), LOCK_EX);
+		return (bool) file_put_contents($this->directory . '/' . $item->getKey(), serialize($item), LOCK_EX);
 	}
 
     /**

@@ -73,7 +73,7 @@ class CacheItem implements CacheItemInterface
      */
     public function isHit(): bool
 	{
-		return $this->expiration !== null || ($this->expiration > new DateTime() && $this->hit);
+		return $this->hit && ($this->expiration === null || $this->expiration > new DateTime());
 	}
 
     /**
